@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <h1>Welcome Back {{current_user.username}}</h1>
+    
+    <h2>Movie Search</h2>
+
+    <form method="POST" action="/movies/search">
+      {{form.hidden_tag()}}
+      {{form.name}}
+      {{form.director}}
+      {{form.genre}}
+      {{form.submit}}
+  </form>
+
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Director</th>
+          <th>Genre</th>
+          <th>popularity</th>
+          <th>imdb_score</th>
+        </tr>
+        {%for movie in movies%}
+           <tr>
+             <td>{{movie.name}}</td>
+             <td>{{movie.director}}</td>
+             <td>{{movie.genre}}</td>
+             <td>{{movie.popularity}}</td>
+             <td>{{movie.imdb_score}}</td>
+            </tr>
+        {%endfor%}
+      </table>     
+
+
+
+   
+    <a href="{{url_for('logout')}}">Log Out</a>
+</body>
+</html>

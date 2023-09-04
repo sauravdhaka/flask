@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Movie</title>
+</head>
+<body>
+    <h1>Update the Movie</h1>
+    <form method="POST" action="/admin/update/{{movie.id}}">
+        {{form.hidden_tag()}}
+        {{form.name}}
+        {{form.director}}
+        {{form.genre}}
+        {{form.popularity}}
+        {{form.imdb_score}}
+        {{form.submit}}
+    </form>
+</body>
+</html>

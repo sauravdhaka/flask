@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <h1>Search Results : </h1>
+    
+    
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Director</th>
+          <th>Genre</th>
+          <th>popularity</th>
+          <th>imdb_score</th>
+        </tr>
+        {%for movie in movies%}
+           <tr>
+             <td>{{movie.name}}</td>
+             <td>{{movie.director}}</td>
+             <td>{{movie.genre}}</td>
+             <td>{{movie.popularity}}</td>
+             <td>{{movie.imdb_score}}</td>
+            </tr>
+        {%endfor%}
+      </table>     
+
+
+
+   
+    <a href="{{url_for('home')}}">Back to Home Page</a>
+</body>
+</html>
